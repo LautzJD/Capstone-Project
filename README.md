@@ -1,4 +1,4 @@
-#HomeTeamAway#
+#HomeTeamAway
 
 **Overview**
 
@@ -18,7 +18,7 @@ JavaScript
 
 **Project Tracker**
 1. [HomeTeamAway Trello](https://trello.com/b/QP8FX722/hometeamaway)
-2. [Project Definition and Wireframes](https://trello.com/b/QP8FX722/hometeamaway)
+2. [Project Definition and Wireframes](https://github.com/LautzJD/Capstone-Project/tree/master/docs)
 
 __Git at me!__:
 1. [GitHub] (https://github.com/LautzJD)
