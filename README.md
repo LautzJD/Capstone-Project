@@ -1,4 +1,4 @@
-#HomeTeamAway
+# HomeTeamAway
 
 **Overview**
 
@@ -12,9 +12,9 @@ I created this project to help Business/casual out of town travelers who looking
 3. The user will be able to submit a location to help build the applications database.
 
 **Technologies**
-HTML
-CSS 
-JavaScript
+- HTML
+- CSS 
+- JavaScript
 
 **Project Tracker**
 1. [HomeTeamAway Trello](https://trello.com/b/QP8FX722/hometeamaway)
