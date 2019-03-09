@@ -1,4 +1,5 @@
-#HomeTeamAway
+#HomeTeamAway#
+
 **Overview**
 
 Create a web application that is mobile friendly, that consists of a database of locations (bars/restaurants) that tend to attract fans of a particular sports team in an easily searchable format.
@@ -16,8 +17,8 @@ CSS
 JavaScript
 
 **Project Tracker**
-[HomeTeamAway Trello](https://trello.com/b/QP8FX722/hometeamaway)
-[Project Definition and Wireframes](https://trello.com/b/QP8FX722/hometeamaway)
+1. [HomeTeamAway Trello](https://trello.com/b/QP8FX722/hometeamaway)
+2. [Project Definition and Wireframes](https://trello.com/b/QP8FX722/hometeamaway)
 
 __Git at me!__:
 1. [GitHub] (https://github.com/LautzJD)
