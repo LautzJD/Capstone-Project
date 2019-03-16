@@ -1,0 +1,50 @@
+#root {
+    display: grid;
+    min-height: 100vh;
+    grid-template-areas: "navigation" "header" "content" "footer";
+    grid-template-rows: min-content min-content auto min-content;
+    background: green;
+}
+
+#navigation {
+    /* position: sticky; */
+    top: 0;
+    grid-area: navigation;
+    text-align: right;
+    background-color: red;
+}
+
+#navigation a {
+    padding: 3%;
+}
+
+#header {
+    grid-area: header;
+    margin: 0px auto 0px 0px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 6px 6px 6px 6px;
+    background-color: aliceblue;
+}
+
+#header h1, h2 {
+    margin: 0px;
+}
+
+#content {
+    grid-area: content;
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: space-around;
+    margin: 1%;
+}
+
+/*# sourceMappingURL=/style.4379c617.css.map */
