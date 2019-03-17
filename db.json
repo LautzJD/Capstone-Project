@@ -1,0 +1,91 @@
+{
+    "cities": [
+        {
+            "id": 1,
+            "name": "St. Louis, MO"
+        },
+        {
+            "id": 2,
+            "name": "New York, NY"
+        },
+        {
+            "id": 3,
+            "name": "San Diego, CA"
+        },
+        {
+            "id": 4,
+            "name": "Chicago, IL"
+        }
+
+    ],
+    "sports": [
+        {
+            "id": 1,
+            "name": "Baseball",
+            "cityId": 2
+        },
+        {
+            "id": 2,
+            "name": "Football",
+            "cityId": 1
+        },
+        {
+            "id": 3,
+            "name": "Football",
+            "cityId": 3
+        },
+        {
+            "id": 4,
+            "name": "Football",
+            "cityId": 4
+        }
+    ],
+    "teams": [
+        {
+            "id": 1,
+            "name": "St. Louis Cardinals",
+            "sportId": 1
+        },
+        {
+            "id": 2,
+            "name": "Green Bay Packers",
+            "sportId": 2
+        },
+        {
+            "id": 3,
+            "name": "Denver Broncos",
+            "sportId": 3
+        },
+        {
+            "id": 4,
+            "name": "Dallas Cowboys",
+            "sportId": 4
+        }
+    ],
+    "locations": [
+        {
+            "id": 1,
+            "name": "HotShots",
+            "address": "14051 Manchester Rd, Ballwin, MO 63011",
+            "teamId": 2
+        },
+        {
+            "id": 2,
+            "name": "Chief's Burgers & Brew",
+            "address": "124 Lomas Santa Fe Dr #108, Solana Beach, CA 92075",
+            "teamId": 3
+        },
+        {
+            "id": 3,
+            "name": "Foley's NY",
+            "address": "18 West 33rd Street, New York, NY 10001",
+            "teamId": 1
+        },
+        {
+            "id": 4,
+            "name": "Commonwealth Tavern",
+            "address": "2000 W Roscoe St, Chicago, IL 60618",
+            "teamId": 4
+        }
+    ]
+}
