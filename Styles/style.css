@@ -33,7 +33,7 @@
 
 #content {
     grid-area: content;
-    background-color: blueviolet;
+    background-color: grey;
     display: flex;
     flex-direction: column;
     justify-content: center;
