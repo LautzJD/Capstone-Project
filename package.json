@@ -1,5 +1,9 @@
 {
   "dependencies": {
     "axios": "^0.18.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "parcel-bundler": "^1.12.2"
   }
 }

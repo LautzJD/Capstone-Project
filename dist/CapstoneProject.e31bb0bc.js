@@ -1780,7 +1780,7 @@ _axios.default.get('https://my-json-server.typicode.com/LautzJD/Capstone-Project
 // 4 “selects” on main index.html
 // Select city => calls another axios every time 
 // Uses the ID of the selected option
-},{"axios":"node_modules/axios/index.js"}],"../../../AppData/Roaming/npm-cache/_npx/7620/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"axios":"node_modules/axios/index.js"}],"../../../AppData/Roaming/npm-cache/_npx/11940/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -1808,7 +1808,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58413" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50909" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -1983,5 +1983,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../AppData/Roaming/npm-cache/_npx/7620/node_modules/parcel/src/builtins/hmr-runtime.js","index.js"], null)
+},{}]},{},["../../../AppData/Roaming/npm-cache/_npx/11940/node_modules/parcel/src/builtins/hmr-runtime.js","index.js"], null)
 //# sourceMappingURL=/CapstoneProject.e31bb0bc.js.map
