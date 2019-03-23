@@ -11,18 +11,50 @@ var router = new Navigo(location.origin);
 var root = document.querySelector('#root');
 var store = new Store();
 
-function render(state){
-    var page = state[state.active];
 
-    root.innerHTML = `
-    ${Navigation(page)}
-    ${Header(page)}
-    ${Content(state)}
-    ${Footer(page)}
-    `;
+function shouldFetch(state){
+    return state.cityId && !state.sports.length && state.active === 'Sport';
 }
 
-router.updatePageLinks();
+function fetchSports(state){
+    var shouldFetchSports = shouldFetch(state);
+    
+    if(shouldFetchSports){
+        axios
+            .get(`https://my-json-server.typicode.com/LautzJD/Capstone-Project/sports?cityId=${state.cityId}`)
+            .then((response) => {
+                store.dispatch((previousState) => Object.assign(previousState, { 'sports': response.data }));
+            });
+    }
+}
+
+function render(state){
+    var page = state[state.active];
+    var form;
+
+    root.innerHTML = `
+        ${Navigation(page)}
+        ${Header(page)}
+        ${Content(state)}
+        ${Footer(page)}
+    `;
+
+    router.updatePageLinks();
+
+    form = document.querySelector('form');
+
+    if(form){
+        form.addEventListener('submit', (event) => {
+            var cityId = event.target.elements[0].value;
+
+            event.preventDefault();
+
+            store.dispatch((previousState) => Object.assign(previousState, { 'cityId': cityId, 'sports': [] }));
+
+            router.navigate('/sport');
+        });
+    }
+}
 
 function navHandler(params){
     var destination = startCase(params.page);
@@ -31,11 +63,11 @@ function navHandler(params){
 }
 
 store.addListener(render);
+store.addListener(fetchSports);
 
 router
     .on('/:page', navHandler)
     .on('/', () => navHandler({ 'page': 'Home' }))
-
     .resolve();
 
 axios

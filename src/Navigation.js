@@ -10,9 +10,7 @@ function linkBuilder(linksArray){
         }
 
         return `
-        <li>
-        <a data-navigo href="./${destination}">${link}</a>
-        </li>
+            <a data-navigo href="./${destination}">${link}</a>
         `;
     }).join(' ');
 
@@ -24,11 +22,7 @@ function linkBuilder(linksArray){
 export default function Navigation(state){
     return `
      <div id = "navigation">
-
-        <ul>
-            ${linkBuilder(state.nlinks)}
-        </ul>
-
+        ${linkBuilder(state.nlinks)}
     </div>
     `;
 }
