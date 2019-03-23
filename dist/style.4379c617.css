@@ -1,3 +1,7 @@
+li {
+    list-style-type: none;
+}
+
 #root {
     display: grid;
     min-height: 100vh;

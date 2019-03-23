@@ -1,4 +1,5 @@
 export default {
     'body': 'Suggest',
-    'links': [ 'Home', 'Suggest a Location', 'About', 'Contact', ],
+    'nlinks': [ 'Home', 'Suggest a Location' ],
+    'flinks': [ 'About', 'Contact', 'Suggest a Location', ],
 };

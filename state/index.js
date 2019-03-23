@@ -2,6 +2,8 @@ export { default as Home } from './Home';
 export { default as Suggest } from './Suggest';
 export { default as About } from './About';
 export { default as Contact } from './Contact';
+export { default as cities } from './Cities';
+export { default as active } from './Active';
 // export { default as Sport } from './Sport';
 // export { default as Team } from './Team';
 // export { default as Results } from './Results';
