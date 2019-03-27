@@ -2,7 +2,7 @@ import Navigation from './src/Navigation';
 import Header from './src/Header';
 import Content from './src/Content';
 import Footer from './src/Footer';
-import { startCase } from 'lodash';
+import { camelCase, upperFirst } from 'lodash';
 import Store from './state/store';
 import Navigo from 'navigo';
 import axios from 'axios';
@@ -21,17 +21,19 @@ function fetchSports(state){
     
     if(shouldFetchSports){
         axios
-            .get(`https://my-json-server.typicode.com/LautzJD/Capstone-Project/sports?cityId=${state.cityId}`)
+            .get(`https://my-json-server.typicode.com/LautzJD/Capstone-Project/cities/${state.cityId}/sports`)
             .then((response) => {
                 store.dispatch((previousState) => Object.assign(previousState, { 'sports': response.data }));
             });
     }
 }
+// /make a fetchteams function that makes an axios call//
 
 function render(state){
     var page = state[state.active];
     var form;
-
+    
+    console.log(state);
     root.innerHTML = `
         ${Navigation(page)}
         ${Header(page)}
@@ -57,13 +59,16 @@ function render(state){
 }
 
 function navHandler(params){
-    var destination = startCase(params.page);
+    var destination = upperFirst(camelCase(params.page));
+
+    console.log(destination);
 
     store.dispatch((state) => Object.assign(state, { 'active': destination }));
 }
 
 store.addListener(render);
 store.addListener(fetchSports);
+//  add a store listner for fetchteams//
 
 router
     .on('/:page', navHandler)
@@ -75,10 +80,4 @@ axios
     .then((response) => {
         store.dispatch((state) => Object.assign(state, { 'cities': response.data }));
     });
-
-// For future://
-// 4 “selects” on main index.html
-// Select city => calls another axios every time
-// Uses the ID of the selected option
-
 

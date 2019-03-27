@@ -26,4 +26,3 @@ export default function Navigation(state){
     </div>
     `;
 }
-// Duplicate this in footer and change link to navlink for navigation.js and footerlink in the footer.js
