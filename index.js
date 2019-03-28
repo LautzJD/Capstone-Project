@@ -13,8 +13,14 @@ var store = new Store();
 
 
 function shouldFetch(state){
-    return state.cityId && !state.sports.length && state.active === 'Sport';
+    if(state.cityId && !state.sports.length && state.active === 'Sport'){
+        return true;
+    }
+    if(state.sportId && !state.teams.length && state.active === 'Team'){
+        return true;
+    }
 }
+// Refactor if have time//Above function takes to next page when submit pressed//
 
 function fetchSports(state){
     var shouldFetchSports = shouldFetch(state);
@@ -27,13 +33,26 @@ function fetchSports(state){
             });
     }
 }
+
 // /make a fetchteams function that makes an axios call//
+function fetchTeams(state){
+    var shouldFetchTeams = shouldFetch(state);
+    
+    if(shouldFetchTeams){
+        axios
+            .get(`https://my-json-server.typicode.com/LautzJD/Capstone-Project/sports/${state.sportId}/teams`)
+            .then((response) => {
+                console.log(response);
+                store.dispatch((previousState) => Object.assign(previousState, { 'teams': response.data }));
+            });
+    }
+}
+
 
 function render(state){
     var page = state[state.active];
     var form;
     
-    console.log(state);
     root.innerHTML = `
         ${Navigation(page)}
         ${Header(page)}
@@ -47,13 +66,20 @@ function render(state){
 
     if(form){
         form.addEventListener('submit', (event) => {
-            var cityId = event.target.elements[0].value;
+            var selectedValue = event.target.elements[0].value;
+            var selectId = event.target.elements[0].id;
 
             event.preventDefault();
 
-            store.dispatch((previousState) => Object.assign(previousState, { 'cityId': cityId, 'sports': [] }));
-
-            router.navigate('/sport');
+            if(selectId === 'cityId'){
+                store.dispatch((previousState) => Object.assign(previousState, { 'cityId': selectedValue, 'sports': [] }));
+                router.navigate('/sport');
+            }
+            
+            if(selectId === 'sportId'){
+                store.dispatch((previousState) => Object.assign(previousState, { 'sportId': selectedValue, 'teams': [] }));
+                router.navigate('/team');
+            }
         });
     }
 }
@@ -61,13 +87,13 @@ function render(state){
 function navHandler(params){
     var destination = upperFirst(camelCase(params.page));
 
-    console.log(destination);
 
     store.dispatch((state) => Object.assign(state, { 'active': destination }));
 }
 
 store.addListener(render);
 store.addListener(fetchSports);
+store.addListener(fetchTeams);
 //  add a store listner for fetchteams//
 
 router

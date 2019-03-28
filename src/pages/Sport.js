@@ -14,7 +14,7 @@ export default function Sport(state){
     return `
     <form method="POST">
         <label for="sport">Select a sport:</label>
-        <select id="sport" name="sport">
+        <select id="sportId" name="sport">
             ${buildSportOptions(state.sports)}
         </select>
         <input type="submit" value="submit">

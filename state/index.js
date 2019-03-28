@@ -7,6 +7,6 @@ export { default as cities } from './Cities';
 export { default as active } from './Active';
 export { default as sports } from './Sports';
 // export { default as Sport } from './Sport';
-// export { default as Team } from './Team';
-// export { default as Results } from './Results';
+export { default as Team } from './Team';
+export { default as Results } from './Results';
 // export { default as NoResults } from './NoResults';

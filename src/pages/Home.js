@@ -15,7 +15,7 @@ export default function Home(state){
 
     <form method="POST">
         <label for="city">Select a major city:</label>
-        <select id="city" name="city">
+        <select id="cityId" name="city">
             ${buildCityOptions(state.cities)}
         </select>
         <input type="submit" value="submit">
