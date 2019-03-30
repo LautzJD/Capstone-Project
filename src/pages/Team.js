@@ -14,7 +14,7 @@ export default function Team(state){
     return `
     <form method="POST">
         <label for="team">Select your team!:</label>
-        <select id="team" name="team">
+        <select id="teamId" name="team">
             ${buildTeamOptions(state.teams)}
         </select>
         <input type="submit" value="submit">

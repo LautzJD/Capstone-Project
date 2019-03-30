@@ -19,6 +19,9 @@ function shouldFetch(state){
     if(state.sportId && !state.teams.length && state.active === 'Team'){
         return true;
     }
+    if(state.teamId && !state.locations.length && state.active === 'Results'){
+        return true;
+    }
 }
 // Refactor if have time//Above function takes to next page when submit pressed//
 
@@ -44,6 +47,19 @@ function fetchTeams(state){
             .then((response) => {
                 console.log(response);
                 store.dispatch((previousState) => Object.assign(previousState, { 'teams': response.data }));
+            });
+    }
+}
+// make a fetchresults function that makes an axios call //
+function fetchResults(state){
+    var shouldFetchResults = shouldFetch(state);
+    
+    if(shouldFetchResults){
+        axios
+            .get(`https://my-json-server.typicode.com/LautzJD/Capstone-Project/teams/${state.teamId}/locations`)
+            .then((response) => {
+                console.log(response);
+                store.dispatch((previousState) => Object.assign(previousState, { 'locations': response.data }));
             });
     }
 }
@@ -80,6 +96,11 @@ function render(state){
                 store.dispatch((previousState) => Object.assign(previousState, { 'sportId': selectedValue, 'teams': [] }));
                 router.navigate('/team');
             }
+
+            if(selectId === 'teamId'){
+                store.dispatch((previousState) => Object.assign(previousState, { 'teamId': selectedValue, 'results': [] }));
+                router.navigate('/results');
+            }
         });
     }
 }
@@ -94,7 +115,8 @@ function navHandler(params){
 store.addListener(render);
 store.addListener(fetchSports);
 store.addListener(fetchTeams);
-//  add a store listner for fetchteams//
+store.addListener(fetchResults);
+
 
 router
     .on('/:page', navHandler)
@@ -106,4 +128,3 @@ axios
     .then((response) => {
         store.dispatch((state) => Object.assign(state, { 'cities': response.data }));
     });
-

@@ -1,5 +1,25 @@
-export default function Results(){
+function Result(location){
     return `
-    <h2>This is the results page!!!</h2>
+        <li>
+            <strong>${location.name}:</strong>
+            <p>${location.address}</p>
+        </li>
     `;
 }
+
+
+function buildResults(locations){
+    return locations
+        .map(Result)
+        .join('');
+}
+
+
+export default function Results(state){
+    return `
+        <ul>
+            ${buildResults(state.locations)}
+        </ul>
+    `;
+}
+

@@ -7,7 +7,14 @@ li {
     min-height: 100vh;
     grid-template-areas: "navigation" "header" "content" "footer";
     grid-template-rows: min-content min-content auto min-content;
-    background: green;
+    background: url(https://lh3.googleusercontent.com/uU7oEfFcLg8BsdemqxmoE058Itkys4wclPp4QfMcLBTHOfa3FdUpA-QCO_-Xv4d1ktUJ-z_c-AojTyePEklE25xbwpWDHXb70PNVP7dAnuLRbkLG6YXCDuGPemHyLzTmGUpnkmOg-1aVPXVvAmWhskGEw2JoIprXCBfKjkSbfx7Dk-QXkKw9uli-8Y--f-nChYdiJb5qDRexRfLyQZ518P_Z0uuVq6Yg0RmDqzN4L0CQB9EhNV1g8bZPYpx2szowAhfGib0ZwPGV-G8OXaOYrF_Siu4aX-O4-qVOa5MypxVaq-FJay8KPorXGZbParkFE4VD7SKLmb0UsQXoaUCFCaEiiQ3wBPk1JK2MhuHBRQMPhSX2XFYPGqtgjxItX2QgGDOOZnfutQfbdt5R-dMJ-B3NYV68AR37PTcJVDpQrpdNEfYxa7kmXPBSmmwAJjkCTivfm9UL3qvcbyjtGEl_ddMtcJDN49dPep7fsSgZ7U1kgcyB4jVU1FN89hmSWHNFmfaGejCD6oyjQ2ZSZen3lPbdAzBiNp5MPuW1uWCtTfVQjb0ex1g09UJ-uXowNPQThJVhC1zF2p9i0DS8TL-GQJC1BMoydcHm3Mx1pEWJaTVomszlCsqe3OaJ2tJz-Ytz2Gs4ZgZMYTUvN2KFmANGOZokqqfImmg=w798-h584-no) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: black;
+    
+
 }
 
 #navigation {
@@ -37,7 +44,6 @@ li {
 
 #content {
     grid-area: content;
-    background-color: grey;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -49,4 +55,5 @@ li {
     display: flex;
     justify-content: space-around;
     margin: 1%;
+    background-color: green;
 }

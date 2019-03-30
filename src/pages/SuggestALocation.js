@@ -6,11 +6,11 @@ export default function SuggestALocation(){
     <div id="suggestForm">
 
     <form action="https://formspree.io/lautzjd@gmail.com" method="POST">
-        <label for="fname">First Name</label>
-        <input type="text" name="first-name" id="fname" required>
+        <label for="locationName">Location Name</label>
+        <input type="text" name="location" id="location" required>
 
-        <label for="lname">Last Name</label>
-        <input type="text" name="last-name" id="lname" required>
+        <label for="city">City</label>
+        <input type="text" name="city" id="city" required>
 
         <label for="email">Email</label>
         <input type="email" name="email" id="email">
