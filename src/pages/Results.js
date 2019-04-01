@@ -17,9 +17,11 @@ function buildResults(locations){
 
 export default function Results(state){
     return `
+    <div id=results>
         <ul>
             ${buildResults(state.locations)}
         </ul>
+    </div>
     `;
 }
 

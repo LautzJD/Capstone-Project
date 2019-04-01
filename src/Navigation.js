@@ -10,6 +10,7 @@ function linkBuilder(linksArray){
         }
 
         return `
+            <i class="fas fa-home"></i>
             <a data-navigo href="./${destination}">${link}</a>
         `;
     }).join(' ');

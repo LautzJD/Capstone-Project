@@ -12,10 +12,11 @@ var root = document.querySelector('#root');
 var store = new Store();
 
 
+function shouldFetchSports(state){
+    return state.cityId && !state.sports.length && state.active === 'Sport';
+}
+
 function shouldFetch(state){
-    if(state.cityId && !state.sports.length && state.active === 'Sport'){
-        return true;
-    }
     if(state.sportId && !state.teams.length && state.active === 'Team'){
         return true;
     }
@@ -26,9 +27,7 @@ function shouldFetch(state){
 // Refactor if have time//Above function takes to next page when submit pressed//
 
 function fetchSports(state){
-    var shouldFetchSports = shouldFetch(state);
-    
-    if(shouldFetchSports){
+    if(shouldFetchSports(state)){
         axios
             .get(`https://my-json-server.typicode.com/LautzJD/Capstone-Project/cities/${state.cityId}/sports`)
             .then((response) => {
@@ -60,6 +59,10 @@ function fetchResults(state){
             .then((response) => {
                 console.log(response);
                 store.dispatch((previousState) => Object.assign(previousState, { 'locations': response.data }));
+                // See bellow for NoResults if statement//
+                // if(!response.data.length){
+                //     router.navigate('/no-results');
+                // }
             });
     }
 }
