@@ -39,7 +39,7 @@ function fetchSports(state){
 // /make a fetchteams function that makes an axios call//
 function fetchTeams(state){
     var shouldFetchTeams = shouldFetch(state);
-    
+      
     if(shouldFetchTeams){
         axios
             .get(`https://my-json-server.typicode.com/LautzJD/Capstone-Project/sports/${state.sportId}/teams`)
