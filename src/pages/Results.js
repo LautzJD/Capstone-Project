@@ -17,7 +17,7 @@ function buildResults(locations){
 
 export default function Results(state){
     return `
-    <div id=results>
+    <div id=contrast>
         <ul>
             ${buildResults(state.locations)}
         </ul>

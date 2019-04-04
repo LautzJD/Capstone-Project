@@ -3,7 +3,7 @@ function Option(sport){
 }
 
 function buildSportOptions(sports){
-    console.log(sports);
+    // console.log(sports);
 
     return sports
         .map(Option)
@@ -12,6 +12,7 @@ function buildSportOptions(sports){
 
 export default function Sport(state){
     return `
+    <div id=contrast>
     <form method="POST">
         <label for="sport">Select a sport:</label>
         <select id="sportId" name="sport">
@@ -19,6 +20,7 @@ export default function Sport(state){
         </select>
         <input type="submit" value="submit">
     </form>
+    </div>
     `;
 }
 

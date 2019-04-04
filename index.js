@@ -11,23 +11,30 @@ var router = new Navigo(location.origin);
 var root = document.querySelector('#root');
 var store = new Store();
 
-
-function shouldFetchSports(state){
-    return state.cityId && !state.sports.length && state.active === 'Sport';
-}
+// To refactor:
+// function shouldFetchSports(state){
+//     return state.cityId && !state.sports.length && state.active === 'Sport';
+// }
 
 function shouldFetch(state){
+    if(state.cityId && !state.sports.length && state.active === 'Sport'){
+        return true;
+    }
     if(state.sportId && !state.teams.length && state.active === 'Team'){
         return true;
     }
     if(state.teamId && !state.locations.length && state.active === 'Results'){
         return true;
     }
+    if(state.active === 'Home'){
+        state.teamId = undefined;
+        // console.log(state.teamId, state.location, state.active);
+    }
 }
 // Refactor if have time//Above function takes to next page when submit pressed//
 
 function fetchSports(state){
-    if(shouldFetchSports(state)){
+    if(shouldFetch(state)){
         axios
             .get(`https://my-json-server.typicode.com/LautzJD/Capstone-Project/cities/${state.cityId}/sports`)
             .then((response) => {
@@ -44,7 +51,7 @@ function fetchTeams(state){
         axios
             .get(`https://my-json-server.typicode.com/LautzJD/Capstone-Project/sports/${state.sportId}/teams`)
             .then((response) => {
-                console.log(response);
+                // console.log(response);
                 store.dispatch((previousState) => Object.assign(previousState, { 'teams': response.data }));
             });
     }
@@ -57,7 +64,7 @@ function fetchResults(state){
         axios
             .get(`https://my-json-server.typicode.com/LautzJD/Capstone-Project/teams/${state.teamId}/locations`)
             .then((response) => {
-                console.log(response);
+                console.log('test', response);
                 store.dispatch((previousState) => Object.assign(previousState, { 'locations': response.data }));
                 // See bellow for NoResults if statement//
                 // if(!response.data.length){

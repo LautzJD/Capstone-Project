@@ -3,7 +3,7 @@ function Option(team){
 }
 
 function buildTeamOptions(teams){
-    console.log(teams);
+    // console.log(teams);
 
     return teams
         .map(Option)
@@ -12,6 +12,7 @@ function buildTeamOptions(teams){
 
 export default function Team(state){
     return `
+    <div id=contrast>
     <form method="POST">
         <label for="team">Select your team!:</label>
         <select id="teamId" name="team">
@@ -19,5 +20,6 @@ export default function Team(state){
         </select>
         <input type="submit" value="submit">
     </form>
+    </div>
     `;
 }

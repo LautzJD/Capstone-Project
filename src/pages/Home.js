@@ -10,6 +10,7 @@ function buildCityOptions(cities){
 
 export default function Home(state){
     return `
+    <div id=contrast>
     <h2>Looking for a place to watch the game?</h2>
     <h3>Find fans of your favorite sports team in other cities!</h3>
 
@@ -20,5 +21,6 @@ export default function Home(state){
         </select>
         <input type="submit" value="submit">
     </form>
+    </div>
     `;
 }
