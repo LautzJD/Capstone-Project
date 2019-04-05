@@ -15,7 +15,12 @@
         {
             "id": 4,
             "name": "Chicago, IL"
+        },
+        {
+            "id": 5,
+            "name": "Denver, CO"
         }
+
 
     ],
     "sports": [
