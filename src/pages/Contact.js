@@ -1,6 +1,14 @@
 export default function Contact(){
     return `
-    <h1>Contact us!</h1>
-    <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia sed error, consequatur aperiam consectetur distinctio nihil veritatis, autem maxime, ipsum molestias tenetur earum dolore officiis blanditiis sunt at reprehenderit atque.</h2>
+    <div id=contrast2>
+    <h1>Contact me!</h1>
+    <i class="fab fa-facebook"></i>
+    <a href="https://www.facebook.com/lautzjd?ref=bookmarks">Facebook</a>
+    <i class="fab fa-google"></i>
+    <a href="mailto:lautzjd@gmail.com">Email</a>
+    <i class="fab fa-github"></i>
+    <a href="https://github.com/LautzJD">Github</a>
+    </div>
+
 `;
 }

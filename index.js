@@ -7,6 +7,7 @@ import Store from './state/store';
 import Navigo from 'navigo';
 import axios from 'axios';
 
+var token = process.env.API_KEY; // eslint-disable-line no-process-env
 var router = new Navigo(location.origin);
 var root = document.querySelector('#root');
 var store = new Store();
@@ -31,7 +32,8 @@ function shouldFetch(state){
         // console.log(state.teamId, state.location, state.active);
     }
 }
-// Refactor if have time//Above function takes to next page when submit pressed//
+// Refactor above if have time//Above function takes to next page when submit pressed//
+
 
 function fetchSports(state){
     if(shouldFetch(state)){
@@ -39,6 +41,21 @@ function fetchSports(state){
             .get(`https://my-json-server.typicode.com/LautzJD/Capstone-Project/cities/${state.cityId}/sports`)
             .then((response) => {
                 store.dispatch((previousState) => Object.assign(previousState, { 'sports': response.data }));
+                if(!response.data.length){
+                    router.navigate('/results');
+
+                    axios
+                        .get('https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=sportsbars&location=Denver, CO', {
+                            'headers': {
+                                'authorization': `Bearer ${token}`
+                            }
+                        })
+                        .then((response) => {
+                            var locations = response.data.businesses.map((location) => ({ 'id': location.id, 'name': location.name, 'address': location.location.display_address.join('\n') }));
+
+                            store.dispatch((previousState) => Object.assign(previousState, { 'locations': locations }));
+                        });
+                }
             });
     }
 }
@@ -64,9 +81,7 @@ function fetchResults(state){
         axios
             .get(`https://my-json-server.typicode.com/LautzJD/Capstone-Project/teams/${state.teamId}/locations`)
             .then((response) => {
-                console.log('test', response);
                 store.dispatch((previousState) => Object.assign(previousState, { 'locations': response.data }));
-                // See bellow for NoResults if statement//
                 // if(!response.data.length){
                 //     router.navigate('/no-results');
                 // }

@@ -71,9 +71,20 @@ h1, h2, h3 {
     padding: 12px;
 }
 
+#contrast2 {
+    background-color: rgba(0, 76, 61, 0.7);
+    padding: 12px;
+}
+
+
 #suggestForm {
     background-color: rgba(255, 255, 255, 0.7);
     align-content: unset;
     padding: 70px 40px;
     margin: 0px 122px;
 }
+
+/* #cardContainer {
+    display: flex;
+    justify-content: space-around;
+} */
