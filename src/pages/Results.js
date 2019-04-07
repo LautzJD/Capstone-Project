@@ -3,10 +3,10 @@ function Result(location){
         <li>
             <strong>${location.name}:</strong>
             <p>${location.address}</p>
+            <p>${location.connection}</p>
         </li>
     `;
 }
-
 
 function buildResults(locations){
     return locations

@@ -1,28 +1,32 @@
 export default function SuggestALocation(){
     return `
     
-    <h1>Suggestion Page</h1>
+    
+    <form method="POST" id="suggestForm" action="https://formspree.io/lautzjd@gmail.com">        
+    
+    <h1>Suggestion Form</h1>
     <h2>Know of a location or own a bar that proudly represents a non-local team? Let us know!</h2>
-    
-    <form id="suggestForm" action="https://formspree.io/lautzjd@gmail.com" method="POST">        
-    
-        <label for="locationName">Location Name</label>
-        <input type="text" name="location" id="location" required>
+        
+    <label for="locationName">Location Name</label>
+    <input type="text" name="name" id="location" required>
 
-        <label for="city">City and State</label>
-        <input type="text" name="city" id="city" required>
+    <label for="city">City</label>
+    <input type="text" name="name" id="city" required>
 
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email">
+    <label for="state">State</label>
+    <input type="text" name="name" id="state" required>
 
-        <label for="phone">Phone</label>
-        <input type="tel" name="phone" id="phone">
+    <label for="email">Email</label>
+    <input type="email" name="name" id="email">
 
-        <textarea name="msg" id="" cols="30" rows="3" placeholder="What teams does your business support?"></textarea>
+    <label for="phone">Phone</label>
+    <input type="tel" name="name" id="phone">
 
-        <input type="submit" value="send">
+    <textarea name="" id="" cols="30" rows="3" placeholder="What non-local team(s) does your business support?"></textarea>
 
-        <input type="reset" value="clear">
+    <input type="submit" value="Submit">
+
+    <input type="reset" value="Clear">
 
     </form>
     `;

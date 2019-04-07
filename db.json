@@ -72,7 +72,8 @@
             "id": 1,
             "name": "HotShots",
             "address": "14051 Manchester Rd, Ballwin, MO 63011",
-            "teamId": 2
+            "teamId": 2,
+            "connection": "Home of the St. Louis Packer Backers"
         },
         {
             "id": 2,
@@ -84,7 +85,8 @@
             "id": 3,
             "name": "Foley's NY",
             "address": "18 West 33rd Street, New York, NY 10001",
-            "teamId": 1
+            "teamId": 1,
+            "connection": "Owned by the brother of ex-Cardinal's pitcher, Chris Carpenter"
         },
         {
             "id": 4,

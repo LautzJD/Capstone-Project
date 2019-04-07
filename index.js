@@ -53,12 +53,15 @@ function fetchSports(state){
                         .then((response) => {
                             var locations = response.data.businesses.map((location) => ({ 'id': location.id, 'name': location.name, 'address': location.location.display_address.join('\n') }));
 
+                            locations.length = 5;
                             store.dispatch((previousState) => Object.assign(previousState, { 'locations': locations }));
                         });
                 }
             });
     }
 }
+
+// New module in state directrory that exports by default some value for that piece of state//re export that module from index.js//consume that piece of state into somekind of component//update that state with dispatch
 
 // /make a fetchteams function that makes an axios call//
 function fetchTeams(state){
