@@ -54,7 +54,10 @@ function fetchSports(state){
                             var locations = response.data.businesses.map((location) => ({ 'id': location.id, 'name': location.name, 'address': location.location.display_address.join('\n') }));
 
                             locations.length = 5;
-                            store.dispatch((previousState) => Object.assign(previousState, { 'locations': locations }));
+                            let previousResults = state.Results;
+
+                            previousResults.yelp = true;
+                            store.dispatch((previousState) => Object.assign(previousState, { 'locations': locations, 'Results': previousResults }));
                         });
                 }
             });
@@ -84,7 +87,11 @@ function fetchResults(state){
         axios
             .get(`https://my-json-server.typicode.com/LautzJD/Capstone-Project/teams/${state.teamId}/locations`)
             .then((response) => {
-                store.dispatch((previousState) => Object.assign(previousState, { 'locations': response.data }));
+                let previousResults = state.Results;
+
+                previousResults.yelp = false;
+
+                store.dispatch((previousState) => Object.assign(previousState, { 'locations': response.data, 'Results': previousResults }));
                 // if(!response.data.length){
                 //     router.navigate('/no-results');
                 // }

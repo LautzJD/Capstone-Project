@@ -11,4 +11,5 @@ export default {
         }
     ],
     'flinks': [ 'About', 'Contact', 'Suggest a Location', ],
+    'yelp': false
 };

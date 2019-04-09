@@ -8,7 +8,6 @@ class Store{
 
     dispatch(reducer){
         this.state = reducer(this.state);
-
         this.listeners.forEach((listener) => listener(this.state));
     }
 
