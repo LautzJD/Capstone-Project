@@ -53,7 +53,7 @@ function fetchSports(state){
                         .then((response) => {
                             var locations = response.data.businesses.map((location) => ({ 'id': location.id, 'name': location.name, 'address': location.location.display_address.join('\n') }));
 
-                            locations.length = 5;
+                            locations.length = 4;
                             let previousResults = state.Results;
 
                             previousResults.yelp = true;

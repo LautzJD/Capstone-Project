@@ -17,9 +17,9 @@ function buildResults(locations){
 
 export default function Results(state){
     let html = '';
-
+    
     if(state.Results.yelp){
-        html += '<h1>Yelp Results</h1>';
+        html += '<div id=contrast><h3>Sorry, there are no locations in your selected city that fellow fans call home! Instead, here are some sports bars in your surrounding area!</h3></div>';
     }
     html += `
     <div id=contrast>
