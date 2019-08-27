@@ -10,7 +10,7 @@ h1, h2, h3 {
 #root {
     display: grid;
     min-height: 100vh;
-    font-size: 120%;
+    font-size: 110%;
     grid-template-areas: "navigation" "header" "content" "footer";
     grid-template-rows: min-content min-content auto min-content;
     background: url(https://lh3.googleusercontent.com/zMatp2pe66Q5GpEs-g4tS8aepq2Dd5d7x4rwEHTDiS6OZk-iG-oXS7p_Z58WC-rIZ8CODcySohZ4-apt2VjoMXt0S2W7JB3UkOOjOAWSfmuR_WZKv6MjQ4Ju5Si-AkV9sb0b3W9q3RDwD2okSMXxPVDGLzsn8ifhOgArEkSJzZr4TjUqRe5V2VopoapORu_Etr3PVxd_afgx0K-XHh8tc1xL7-yIuAU6IvSe4kKKZXBh_nPLI08YfyPSe25zANSDrjDNDSaHfJeU3d0XvS0-eoevuIVKwaa_hZ5_zzYPxaZC05l_db5mM9Vi1RzjF7IwHRFjEtSGGOjRup2a9g_hqSO9-Kaw78k9-YywsEuN2P1msYA1UBJBLf8qTH7Bq-P45ZRcvqPAY_tuNnasv30M-ztXm04llpoA0P9x2FVBNt5X9m7YCz5ZYUupuICRCvXtPpHl2Lvb707lIMJtkevGChyzQVLqcaTZZ1dQ78_El9HyCx85Q7gX8NhCI0N2JPJp4Z7XnYwDH8-VClroyWvu51xYs3nNSRvWdfMeFkZwjGWyoMot_fBzApBo3S3uHRRXcNR8bE-IH26N6YzU0_tQCWJVYB4IuliW1Hs_Leom0nWcCCq1gYoI3l6BCN5mL3RssMlA_dGw1FZ6PIkqPwSXZTPdtUmqmBk=w874-h411-no) no-repeat center center fixed; 

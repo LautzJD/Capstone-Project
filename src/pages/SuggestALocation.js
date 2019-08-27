@@ -22,7 +22,7 @@ export default function SuggestALocation(){
     <label for="phone">Phone</label>
     <input type="tel" name="name" id="phone">
 
-    <textarea name="" id="" cols="30" rows="3" placeholder="What non-local team(s) does your business support?"></textarea>
+    <textarea name="msg" id="msg" cols="30" rows="3" placeholder="What non-local team(s) does your business support?"></textarea>
 
     <input type="submit" value="Submit">
 
